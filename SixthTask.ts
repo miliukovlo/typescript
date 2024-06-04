@@ -24,5 +24,6 @@
     { id: 1, name: "Alice", email: "alice@example.com", age: 25 },
     { id: 2, name: "Bob", email: "bob@example.com", age: 30 }
   ];
-  const user = findById<Identifiable>(usersArray, 1);
+  const user = findById<User>(usersArray, 2);
+  console.log(user)
   //---------------------------------------------------------------------------------
