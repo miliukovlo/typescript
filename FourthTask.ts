@@ -18,12 +18,13 @@
   
   // Создайте функцию, которая принимает PartialEmployee и выводит информацию о сотруднике
   function printEmployeeInfo(employee: PartialEmployee): void {
+    const { id, name, department, email } = employee;
     // Реализуйте логику функции, обрабатывая случай отсутствующих свойств
     console.log(`Информация о работнике: 
-      ID: ${employee.id !== undefined ? employee.id : 'информация отсутствует'},
-      Имя: ${employee.name !== undefined ? employee.name : 'информация отсутствует'}, 
-      Департамент: ${employee.department !== undefined ? employee.department : 'информация отсутствует'}, 
-      Электронная почта: ${employee.email !== undefined ? employee.email : 'информация отсутствует'}`)
+      ID: ${id ?? 'информация отсутствует'},
+      Имя: ${name ?? 'информация отсутствует'}, 
+      Департамент: ${department ?? 'информация отсутствует'}, 
+      Электронная почта: ${email ?? 'информация отсутствует'}`);
   }
   //---------------------------------------------------------------------------------
   
