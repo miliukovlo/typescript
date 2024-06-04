@@ -35,10 +35,10 @@
     return items.find(item => item[key] !== undefined && item[key] === value);
   }
   
-  const findInArrayMultipleKeys = <T>(items: T[], searchCriteria: Partial<T>): T | undefined => {
-    return items.find(item =>
-      Object.keys(searchCriteria).every(key => item[key as keyof T] === searchCriteria[key as keyof T])
-    );
+  const findInArrayMultipleKeys = <T>(items: T[], searchCriteria: Partial<T>): T[] | undefined => {
+      return items.filter(item =>
+        Object.keys(searchCriteria).every(key => item[key as keyof T] === searchCriteria[key as keyof T])
+      );
   }
   
   
@@ -66,5 +66,6 @@
   // 3. Найдите книгу по автору "Another One".
   const foundBook = findInArray(books, 'author', "Another One");
 
-  const foundUserMultipleKeys = findInArrayMultipleKeys(users, { name: "Alice", age: 25 });
+  const foundUserMultipleKeys = findInArrayMultipleKeys(users, {});
+  console.log(foundUserMultipleKeys)
   //---------------------------------------------------------------------------------
