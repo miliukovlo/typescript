@@ -17,8 +17,8 @@
   };
   
   // Создайте Type Guard для проверки, является ли объект автомобилем
-  function isCar(vehicle: any): vehicle is Car {
-    return vehicle
+  function isCar(vehicle: Car | Bike): vehicle is Car {
+    return (vehicle as Car).model !== undefined
   }
   
   // Используйте Type Guard в функции, которая печатает информацию о транспорте. Небольшая подсказка о том, какие параметры в себя может принимать isCar дана ниже.
